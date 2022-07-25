@@ -1,0 +1,10 @@
+img{
+  
+  height: auto;
+  max-width: 50%;
+  max-height: 50%;
+}
+#main_map{
+  height: 50%;
+  width: 50%;
+}

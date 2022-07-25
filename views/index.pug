@@ -1,0 +1,212 @@
+export layout
+block content
+
+.header_section
+  .container-fluid
+    .row
+      .col-sm-4
+       
+      .col-sm-4
+        
+      .col-sm-4
+        .togle_3
+          .left_main
+            .menu_main
+              a(href='#')
+                i.fa.fa-fw.fa-user
+                |  Login
+          .middle_main
+            .shoping_bag
+              img(src='images/shopping-bag.png')
+          .right_main
+            .togle_main
+              
+                img(src='images/togle-menu-icon.png' style='max-width: 100%;')
+  .banner_section.layout_padding
+    .container
+      section
+        #main_slider.section.carousel.slide.banner-main(data-ride='carousel')
+          ol.carousel-indicators
+            li.active(data-target='#main_slider' data-slide-to='0')
+            li(data-target='#main_slider' data-slide-to='1')
+            li(data-target='#main_slider' data-slide-to='2')
+          .carousel-inner
+            .carousel-item.active
+              .container
+                .row.marginii
+                  .col-xl-6.col-lg-6.col-md-6.col-sm-12
+                    .carousel-sporrt_text
+                      h1.sport_text
+                        strong
+                          | Sports
+                          br
+                          span(style='color: #fff;') Cycle
+                      p.lorem_text
+                        | It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using &apos;Content here, content
+                      button.boynow_bt Boy Now
+                      button.contact_bt Contact Us
+                  .col-xl-6.col-lg-6.col-md-6.col-sm-12
+                    .img-box
+                      figure
+                        img(src='images/img-1.png' style='max-width: 100%;')
+            .carousel-item
+              .container
+                .container
+                  .row.marginii
+                    .col-xl-6.col-lg-6.col-md-6.col-sm-12
+                      .carousel-sporrt_text
+                        h1.sport_text
+                          strong
+                            | Sports
+                            br
+                            span(style='color: #fff;') Cycle
+                        p.lorem_text
+                          | It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using &apos;Content here, content
+                        button.boynow_bt Boy Now
+                        button.contact_bt Contact Us
+                    .col-xl-6.col-lg-6.col-md-6.col-sm-12
+                      .img-box
+                        figure
+                          img(src='images/img-1.png' style='max-width: 100%;')
+            .carousel-item
+              .container
+                .row.marginii
+                  .col-xl-6.col-lg-6.col-md-6.col-sm-12
+                    .carousel-sporrt_text
+                      h1.sport_text
+                        strong
+                          | Sports
+                          br
+                          span(style='color: #fff;') Cycle
+                      p.lorem_text
+                        | It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using &apos;Content here, content
+                      button.boynow_bt Boy Now
+                      button.contact_bt Contact Us
+                  .col-xl-6.col-lg-6.col-md-6.col-sm-12
+                    .img-box
+                      figure
+                        img(src='images/img-1.png' style='max-width: 100%;')
+
+.container-fluid
+  .about_section
+    .container
+      .about_img
+        img(src='images/about-img1.png' style='max-width: 100%;')
+      h2.about_text
+        strong
+          | About 
+          span(style='color: #000;') Us
+      .about_middle
+        p.about_lorem
+          | It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using &apos;Content here, content here&apos;, making it It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using &apos;Content here, content here&apos;, making it
+      .red_bt
+        button.read_more Read More
+
+.our_section
+  .container
+    .row
+      .col-sm-12
+        h1.our_text
+          strong
+            | Our 
+            span(style='color: #000;') Cycles
+        p.about_lorem
+          | t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum
+  .our_section_2
+    .our_main
+      #my_slider.carousel.slide(data-ride='carousel')
+        .carousel-inner
+          .carousel-item.active
+            img.d-block.w-100(src='images/our-img-1.png' alt='First slide')
+          .carousel-item
+            img.d-block.w-100(src='images/our-img-1.png' alt='Second slide')
+          .carousel-item
+            img.d-block.w-100(src='images/our-img-1.png' alt='Third slide')
+        a.carousel-control-prev(href='#my_slider' role='button' data-slide='prev')
+          span.carousel-control-prev-icon(aria-hidden='true')
+          span.sr-only Previous
+        a.carousel-control-next(href='#my_slider' role='button' data-slide='next')
+          span.carousel-control-next-icon(aria-hidden='true')
+          span.sr-only Next
+    button.seemore_bt See More
+.contact_section.layout_padding
+  .container
+    h1.contact_text
+      strong Contact Us
+  .contact_main
+    .enput_section
+      .email_box
+        .input_main
+          .container
+            form(action='/action_page.php')
+              .form-group
+                input.email-bt(type='text' placeholder='Name' name='Name')
+              .form-group
+                input.email-bt(type='text' placeholder='Email' name='Name')
+              .form-group
+                input.email-bt(type='text' placeholder='Phone Numbar' name='Email')
+              .form-group
+                textarea#comment.massage-bt(placeholder='Massage' rows='5' name='Massage')
+          .send_btn
+            button.main_bt(type='button')
+              a(href='#') Send
+
+.testimonial_section.layout_padding
+  .container
+    h1.contact_text
+      strong Testimonial
+    p.dolore_text
+      | consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+    .images_3
+      img(src='images/img-3.png')
+    h2.rooty_text Rooty
+    p.ice_text (lcc)
+    div
+      img(src='images/left-quote.png')
+    p.dolore_text
+      | consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore  , quis nostrud exercitation
+    .right_quote
+      img(src='images/right-quote.png')
+
+.footer_section.layout_padding
+  .container
+    .row
+      .col-sm-4
+        h2.important_text Important Link
+        .footer_menu
+          ul
+            li
+              a(href='#') Home
+            li
+              a(href='#') About Us
+            li
+              a(href='#') Our Latest Event
+            li
+              a(href='#') Our Latest Article
+            li
+              a(href='#') Join With Us
+      .col-sm-4
+        h2.important_text Social Link
+        .footer_menu
+          ul
+            li
+              a(href='#') Facebook
+            li
+              a(href='#') Linkedin
+            li
+              a(href='#') Twitter
+            li
+              a(href='#') Youtube
+            li
+              a(href='#') Pinterest
+      .col-sm-4
+        h2.important_text Subscribe With Us
+        p.footer_lorem_text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga
+        .input-group.mb-3
+          input.form-control(type='text' placeholder='text' aria-label="Recipient's username" aria-describedby=' basic-addon2')
+          .input-group-append
+            span#basic-addon2.input-group-text Subscribe
+
+.copyright_text
+  | Copyright 2019 All Right Reserved By. 
+  a(href='https://html.design')  Free Html Templates
