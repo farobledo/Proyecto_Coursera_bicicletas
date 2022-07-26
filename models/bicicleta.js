@@ -30,6 +30,7 @@ Bicicleta.findById = function (aBiciId) {
     } else {
       throw new Error(`La bicicleta no existe depende del id  ${aBiciId}`);
   }
+}
 
   Bicicleta.removeById = function (aBiciId) {
     for (var i = 0; i < Bicicleta.allBicis.length; i++) {
@@ -39,7 +40,7 @@ Bicicleta.findById = function (aBiciId) {
       }
     }
   }
-}
+
 
 
 var a = new Bicicleta(1, "rojo", "urbana", [51.505, -0.09]);

@@ -1,4 +1,4 @@
-var Bicicleta = require("../models/bicicleta");
+var Bicicleta = require("../../models/bicicleta");
 
 exports.bicicleta_list = function (req, res) {
     res.render(200).json({
