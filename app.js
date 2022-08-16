@@ -6,13 +6,23 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var bicicletasRouter = require('./routes/bicicletas');
 var bicicletasAPIRouter = require('./routes/api/bicicletas');
-
- 
-
- 
+var usuarioAPIRouter = require('./routes/api/usuarios');
 
 var app = express();
+
+var mongoose = require('mongoose');
+var mongoDB = 'mongodb://localhost/red_bicicletas';
+mongoose.connect(mongoDB, {useNewUrlParser: true});
+mongoose.Promise = global.Promise;
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+ db.once('open', function () {
+    console.log('We are connected to test!');
+  });
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -26,7 +36,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/bicicletas', bicicletasRouter);
 app.use('/api/bicicletas', bicicletasAPIRouter);
+app.use('/api/usuarios', usuarioAPIRouter);
 
 
 
