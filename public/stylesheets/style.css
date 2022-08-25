@@ -8,3 +8,8 @@ img{
   height: 50%;
   width: 50%;
 }
+
+body{
+  padding-top: 5rem;
+  padding: 50px;
+}
