@@ -1,12 +1,13 @@
-const nodenailer = require('nodenailer');
+const nodemailer = require('nodemailer');
 
-const mailConfig = {
+const mailerconfig = {
     host: 'smtp.gmail.com',
     port: 465,
+    secure: true,
     auth: {
-        user: 'javonte.bauch22@ethereal.email ',
-        pass: 'Nz5z4ZaSe4YGCu9PJM'
+        user: 'skylar.ziemann21@ethereal.email',
+        pass: 'rsPBxhwrZucQy8ZRwr'
     }
 };
 
-module.exports =  nodenailer.createTransport(mailConfig);
+module.exports = nodemailer.createTransport(mailerconfig);
