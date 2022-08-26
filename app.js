@@ -1,3 +1,4 @@
+require('dotenv').config();
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -38,7 +39,8 @@ const usuario = require('./models/usuario');
 const {
   error
 } = require('console');
-var mongoDB = 'mongodb://localhost/red_bicicletas';
+
+var mongoDB = process.env.MONGO_URI;
 mongoose.connect(mongoDB, {
   useNewUrlParser: true
 });
@@ -165,6 +167,29 @@ app.post('/resetPassword', function (req, res) {
     });
   });
 });
+
+app.use('/privacy_policy', function (req, res) {
+  res.sendFile('public/policy_privacy.html');
+});
+
+app.get('/auth/google',
+  passport.authenticate('google', {
+    scope: [
+      'https://www.googleapi.com/auth/pus.login',
+      'https://www.googleapi.com/auth/pus.profile.emails.read'
+
+    ]
+  }));
+
+app.get('/auth/google/callback', passport.autenticate('googgle', {
+  successRedirect: '/',
+  failureRedict: '/error'
+}));
+
+
+
+
+
 
 app.use('/usuarios', usuariosRouter);
 app.use('/tokens', tokensRouter);
