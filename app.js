@@ -1,3 +1,4 @@
+require('newrelic');
 require('dotenv').config();
 var createError = require('http-errors');
 var express = require('express');
@@ -7,12 +8,31 @@ var logger = require('morgan');
 var passport = require('./config/passport');
 var session = require('express-session');
 var jwt = require('jsonwebtoken');
-
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var bicicletasRouter = require('./routes/bicicletas');
 var bicicletasAPIRouter = require('./routes/api/bicicletas');
 var usuarioAPIRouter = require('./routes/api/usuarios');
+
+const FacebbokTokenStrategy = require('passport-facebbok-token');
+
+passport.use(new FacebbokTokenStrategy({
+  clientID: process.env.FACEBBOK_ID,
+  clientSecret: process.env.FACEBBOK_SECRET
+}, function (accessToken, refrehToken, profile, done) {
+  try {
+    User.findOneOrCreateByFacebbok(profile, function (err, user) {
+      if (err) console.log('err' + err);
+      return done(err, user);
+
+    });
+  } catch (err2) {
+    console.log(err2);
+    return done(err2, null);
+  }
+}));
+
+
 
 const Usuarios = require('./models/usuarios');
 const Token = require('./models/token');
